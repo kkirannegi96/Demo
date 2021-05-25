@@ -1,0 +1,384 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    list-style: none;
+    text-decoration: none;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-30deg, #33ccff, #81d5ff, #ffccff, #81d5ff);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    left: 8%;
+    bottom: 2%;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: zigzag1 3s linear infinite;
+    z-index: -1;
+}
+
+@keyframes zigzag1 {
+    0%,
+    100% {
+        transform: translateX(60px);
+    }
+    50% {
+        transform: translateX(120px);
+    }
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    left: 92%;
+    top: 12%;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: zigzag2 3s linear infinite;
+}
+
+@keyframes zigzag2 {
+    0%,
+    100% {
+        transform: translateY(60px);
+    }
+    50% {
+        transform: translateY(120px);
+    }
+}
+
+.container {
+    width: 90%;
+    height: 85vh;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.container .navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 25px;
+    margin-top: 1em;
+}
+
+.container .navBar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.container .navBar .logo img {
+    width: 40px;
+}
+
+.container .navBar .logo .logoName {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-left: 0.5em;
+}
+
+.container .navBar .logo img {
+    animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(-360deg);
+    }
+}
+
+.container .navBar .searchBox {
+    position: relative;
+}
+
+.container .navBar .searchBox input {
+    padding: 8px 120px 8px 20px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.container .navBar .searchBox input:focus {
+    padding: 8px 250px 8px 20px;
+}
+
+.container .navBar .searchBox .fa {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.container .navBar .navItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .navBar .navItem .lang select {
+    padding: 6px 30px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    position: relative;
+    right: 4em;
+}
+
+
+/* .container .navBar .navItem .lang select option {
+    border: none;
+    outline: none;
+} */
+
+.container .navBar .navItem .icons {
+    position: relative;
+    right: 1em;
+}
+
+.container .navBar .navItem .icons ul li {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 12px;
+    /* color: #33cc33; */
+    color: #00004d;
+}
+
+.container .navBar .navItem .icons ul li .fa {
+    padding: 5px;
+    color: #fff;
+    background: #000;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.container .navBar .navItem .icons ul li .fa:hover {
+    transform: scale(1.2) rotate(360deg);
+    color: #00004d;
+    background: transparent;
+}
+
+.container .navBar .navItem .account {
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.container .navBar .navItem .account img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.container .navBar .navItem .account .name {
+    text-transform: capitalize;
+    margin: 0 8px;
+    font-weight: 700;
+}
+
+.container .navBar .navItem .account .userName {
+    position: absolute;
+    top: 18px;
+    left: 32px;
+    font-size: 12px;
+}
+
+.container-body {
+    display: grid;
+    grid-template-columns: 18% auto;
+}
+
+.container-body .sideBar {
+    margin: 20px 0 20px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 14px;
+    padding: 10px;
+}
+
+.container-body .sideBar ul li {
+    padding: 10px 10px;
+    margin: 10px 0;
+}
+
+.container-body .sideBar ul li:hover {
+    background: #00004d;
+    border-radius: 8px;
+}
+
+.container-body .sideBar ul li:hover a {
+    color: #fff;
+}
+
+.container-body .sideBar ul li a {
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.container-body .sideBar ul li .fa {
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+.container-body .sideBar ul .dashboard {
+    background: #00004d;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.container-body .sideBar ul .dashboard a {
+    color: #fff;
+}
+
+.container-body .main-body .title {
+    padding: 15px;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.container-body .main-body .title .greetings {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.container-body .main-body .title h2 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.container-body .main-body .cards {
+    display: grid;
+    grid-template-rows: 180px 140px;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.container-body .main-body .cards .row-1 {
+    display: grid;
+    grid-template-columns: 30% 40% auto;
+    grid-gap: 20px;
+}
+
+.container-body .main-body .cards .row-2 {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+}
+
+.container-body .main-body .cards .row .col {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+}
+
+.container-body .main-body .cards .row .col .cardTitle {
+    font-size: 16px;
+    padding: 20px;
+    text-transform: capitalize;
+}
+
+.balance-card {
+    position: relative;
+}
+
+.balance-card h2 {
+    font-size: 28px;
+    padding: 10px 20px;
+}
+
+.balance-card span {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px;
+    color: #00004d;
+}
+
+.balance-card img {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 5em;
+    left: 14em;
+}
+
+.lastest-activity img {
+    width: 100%;
+    height: 100px;
+}
+
+.debit-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 14px;
+    background: #000;
+    color: #33ccff;
+}
+
+.debit-card .cardNumber {
+    font-size: 18px;
+    padding: 10px;
+    padding-right: 0;
+    background: rgba(255, 255, 255, 0.6);
+    color: #fff;
+    font-weight: normal;
+    align-items: center;
+}
+
+.debit-card .cardHolder {
+    font-size: 18px;
+    padding: 20px;
+    font-weight: normal;
+}
+
+.col .t-i,
+.p-i,
+.u-i,
+.i-s {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 20px 5px 20px 20px;
+}
+
+.col .status {
+    font-size: 18px;
+    padding: 6px 20px;
+    border-radius: 6px;
+    color: #fff;
+    position: relative;
+    bottom: 3px;
+}
+
+.total-invoice .status {
+    font-weight: 700;
+    color: #339933;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.paid-invoice .status {
+    background: #0066cc;
+}
+
+.unpaid-invoice .status {
+    background: #ff0066;
+}
+
+.invoice-sent .status {
+    background: #ffcc00;
+}
